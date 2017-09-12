@@ -19,5 +19,6 @@ def show_user_profile(username):
 
 @app.route('/add', methods=['POST'])
 def add_entry():
-    print "El nombre recibido es {}".format(request.headers['nombre'])
+    # print "El nombre recibido es {}".format(request.headers['nombre'])
+    print "El nombre recibido es {}".format(request.form.get('nombre'))
     return "Done!"
