@@ -1,0 +1,5 @@
+echo -e "POST /add HTTP/1.1\r\nHost: 192.168.0.2\r\nContent-Type: application/x-www-form-urlencoded\r\nContent-Length: 15\r\n\r\nnombre=agustin" | netcat 192.168.0.8 5000
+
+echo -e "GET / HTTP/1.1\r\nHost: 192.168.0.2\r\nContent-Type: application/x-www-form-urlencoded\r\n" | netcat 192.168.0.8 5000
+
+echo -e "GET /user/agustin HTTP/1.1\r\nHost: 192.168.0.2\r\nContent-Type: application/x-www-form-urlencoded\r\n" | netcat 192.168.0.8 5000
