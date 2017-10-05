@@ -13,5 +13,5 @@ try:
     data_rec = sock.recvfrom(BUFFER_SIZE)
 except KeyboardInterrupt:
     sock.close()
-print("Recibi del servidor: ", data_rec)
+print("Recibi del servidor: ", data_rec[0].decode('utf-8'))
 sock.close()

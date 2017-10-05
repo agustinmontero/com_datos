@@ -16,4 +16,4 @@ except KeyboardInterrupt:
     sock.close()
 sock.close()
 
-print("Recibi: ", data_recv)
+print("Recibi: ", data_recv.decode('utf-8'))
