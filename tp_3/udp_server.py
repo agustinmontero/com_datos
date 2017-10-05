@@ -16,3 +16,4 @@ while True:
     except (KeyboardInterrupt, OSError):
         print("Finalizando...")
         sock.close()
+        break
