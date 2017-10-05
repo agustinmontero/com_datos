@@ -1,6 +1,6 @@
 import socket
 
-UDP_IP = "192.168.0.3"
+UDP_IP = "192.168.0.4"
 UDP_PORT = 13012
 BUFFER_SIZE = 512
 
@@ -9,6 +9,10 @@ sock = socket.socket(socket.AF_INET,  # Internet
 sock.bind((UDP_IP, UDP_PORT))
 
 while True:
-    data, addr = sock.recvfrom(BUFFER_SIZE)
-    print("received message:", data)
-    sock.sendto(data, addr)  # eco
+    try:
+        data, addr = sock.recvfrom(BUFFER_SIZE)
+        print("received message:", data)
+        sock.sendto(data, addr)  # eco
+    except KeyboardInterrupt:
+        print("Finalizando...")
+        sock.close()
