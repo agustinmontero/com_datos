@@ -13,6 +13,6 @@ while True:
         data, addr = sock.recvfrom(BUFFER_SIZE)
         print("received message:", data)
         sock.sendto(data, addr)  # eco
-    except KeyboardInterrupt:
+    except (KeyboardInterrupt, OSError):
         print("Finalizando...")
         sock.close()

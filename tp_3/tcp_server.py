@@ -19,6 +19,6 @@ while True:
             break
         print("received data:", data)
         conn.send(data)  # echo
-    except KeyboardInterrupt:
+    except (KeyboardInterrupt, OSError):
         conn.close()
 conn.close()

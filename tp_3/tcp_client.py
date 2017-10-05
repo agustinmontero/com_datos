@@ -8,7 +8,7 @@ MESSGAE = 'Hola server!'
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.connect((SERVER_IP, SERVER_PORT))
-sock.send(MESSGAE)
+sock.send(MESSGAE.encode())
 data_recv = ''
 try:
     data_recv = sock.recv(BUFFER_SIZE)
